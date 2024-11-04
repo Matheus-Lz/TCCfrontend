@@ -1,0 +1,28 @@
+@import '../../styles/variable.css';
+
+.user-component {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  width: 300px;
+  margin: auto;
+}
+
+.user-component h1 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.user-component ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-component li {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

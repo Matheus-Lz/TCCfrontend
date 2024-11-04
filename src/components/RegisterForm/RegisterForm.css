@@ -1,0 +1,63 @@
+@import '../../styles/variable.css';
+
+.register-form {
+    background-color: var(--secondary-color); /* Usa a variável de cor */
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+    color: var(--primary-color);
+}
+
+.register-form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.register-form .company-checkbox {
+    margin-top: 10px;
+}
+
+.register-form input[type="text"] {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px; /* Ajuste conforme necessário */
+}
+.checkbox-container label {
+    font-size: 14px; /* Ajuste conforme necessário */
+    color: var(--text-color); /* Ou outra cor desejada */
+}
+

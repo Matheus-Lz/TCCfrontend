@@ -1,0 +1,37 @@
+@import '../../styles/variable.css'; /* Importando variáveis de cor */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--secondary-color); /* Usando variável de cor */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-page h1 {
+  color: var(--primary-color); /* Usando variável de cor */
+  margin-bottom: 20px;
+}
+
+.home-page p {
+  color: var(--text-color); /* Usando variável de cor */
+  font-size: 18px;
+}
+
+.home-page button {
+  background-color: var(--primary-color); /* Usando variável de cor */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home-page button:hover {
+  background-color: #5a00b3;
+}

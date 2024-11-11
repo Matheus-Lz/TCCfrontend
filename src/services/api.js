@@ -30,15 +30,15 @@ export const setToken = (token) => {
 
 // Função para logout
 export const logout = () => {
-    localStorage.removeItem('token'); // Remove o token do localStorage
-    delete api.defaults.headers.common['Authorization']; // Remove o cabeçalho Authorization
+    localStorage.removeItem('token');
+    delete api.defaults.headers.common['Authorization'];
 };
 
 // Função de login do usuário
 export const loginUser = async (email, password) => {
     try {
         const response = await api.post('/user/login', { email, password });
-        setToken(response.data); // Armazena o token após login
+        setToken(response.data);
         return response.data;
     } catch (error) {
         console.error('Erro ao fazer login:', error.response?.data || error.message);
@@ -49,9 +49,7 @@ export const loginUser = async (email, password) => {
 // Função de registro de usuário
 export const registerUser = async (userData) => {
     try {
-        console.log("Tentando registrar usuário com dados:", userData);
         const response = await api.post('/user/register', userData);
-        console.log("Resposta do servidor:", response.data);
         return response.data;
     } catch (error) {
         console.error('Erro ao registrar usuário:', error.response?.data || error.message);
@@ -109,7 +107,6 @@ export const deleteEvent = async (eventId) => {
 export const registerService = async (serviceData) => {
     try {
         const response = await api.post('/servicos', serviceData);
-        console.log("Serviço cadastrado com sucesso:", response.data);
         return response.data;
     } catch (error) {
         console.error('Erro ao cadastrar serviço:', error.response?.data || error.message);
@@ -120,10 +117,21 @@ export const registerService = async (serviceData) => {
 // Função para buscar serviços
 export const getServices = async () => {
     try {
-        const response = await api.get('/servicos'); // Endpoint para buscar todos os serviços
+        const response = await api.get('/servicos');
         return response.data;
     } catch (error) {
         console.error('Erro ao buscar serviços:', error.response?.data || error.message);
+        throw error;
+    }
+};
+
+// Função para deletar um serviço
+export const deleteService = async (id) => {
+    try {
+        const response = await api.delete(`/servicos/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Erro ao deletar serviço:', error.response?.data || error.message);
         throw error;
     }
 };

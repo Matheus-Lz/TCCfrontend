@@ -6,6 +6,9 @@ import LoginCompanyPage from './pages/LoginPage/LoginCompanyPage'; // Import do 
 import Register from './pages/Register/Register';
 import RegisterCompanyPage from './pages/Register/RegisterCompanyPage'; // Import do Cadastro de Empresa
 import HomePage from './pages/HomePage/HomePage';
+import PetshopDashboardPage from './pages/LoginPage/PetshopDashboardPage';
+import RegisterServicePage from './Petshop/RegisterServicePage'; // Caminho atualizado
+import ServiceListPage from './Petshop/ServiceListPage'; // Caminho atualizado
 
 import './styles/App.css';
 
@@ -32,6 +35,15 @@ function App() {
 
         {/* Redireciona o caminho raiz ("/") para "/home" */}
         <Route path="/" element={<Navigate to="/home" />} />
+
+        {/* Rota para Petshop Dashboard */}
+        <Route path="/petshop-dashboard" element={<PetshopDashboardPage />} />
+
+        {/* Rota para Cadastro de Serviços */}
+        <Route path="/petshop/services" element={<RegisterServicePage />} />
+
+        {/* Rota para Listagem de Serviços */}
+        <Route path="/petshop/service-list" element={<ServiceListPage />} />
 
         {/* Rota protegida para o Calendário (opcional) */}
         <Route

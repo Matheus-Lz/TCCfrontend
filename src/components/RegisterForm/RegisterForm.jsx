@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../../services/api';
 import './RegisterForm.css';
@@ -8,15 +8,7 @@ const RegisterForm = () => {
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isCompany, setIsCompany] = useState(false);
     const navigate = useNavigate();
-
-    const handleCheckboxChange = (e) => {
-        setIsCompany(e.target.checked);
-        if (e.target.checked) {
-            navigate('/register-company'); // Redireciona para a página de cadastro de empresa
-        }
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,9 +29,8 @@ const RegisterForm = () => {
         } catch (error) {
             console.error('Erro ao registrar usuário:', error);
             // Aqui você pode adicionar uma mensagem de erro para o usuário, se desejar
-        } // Simula um tempo de resposta do backend (ajuste conforme necessário)
+        }
     };
-
 
     return (
         <form onSubmit={handleSubmit} className="register-form">
@@ -72,15 +63,6 @@ const RegisterForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
             />
-            <div className="checkbox-container">
-                <input
-                    type="checkbox"
-                    id="company-checkbox"
-                    checked={isCompany}
-                    onChange={handleCheckboxChange}
-                />
-                <label htmlFor="company-checkbox">Sou empresa</label>
-            </div>
             <button type="submit">Cadastrar</button>
         </form>
     );

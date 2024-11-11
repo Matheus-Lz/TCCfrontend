@@ -105,4 +105,27 @@ export const deleteEvent = async (eventId) => {
     }
 };
 
+// Função de registro de serviço
+export const registerService = async (serviceData) => {
+    try {
+        const response = await api.post('/servicos', serviceData);
+        console.log("Serviço cadastrado com sucesso:", response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Erro ao cadastrar serviço:', error.response?.data || error.message);
+        throw error;
+    }
+};
+
+// Função para buscar serviços
+export const getServices = async () => {
+    try {
+        const response = await api.get('/servicos'); // Endpoint para buscar todos os serviços
+        return response.data;
+    } catch (error) {
+        console.error('Erro ao buscar serviços:', error.response?.data || error.message);
+        throw error;
+    }
+};
+
 export default api;

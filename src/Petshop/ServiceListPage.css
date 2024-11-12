@@ -46,6 +46,17 @@
     fill: #6A0DAD; /* Roxo */
 }
 
+/* Estilo do ícone de edição */
+.edit-icon {
+    position: absolute;
+    top: 10px;
+    right: 40px; /* Ajusta a posição para não sobrepor o ícone de lixeira */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    fill: #6A0DAD; /* Roxo */
+}
+
 /* Estilo do conteúdo do serviço */
 .service-card h2 {
     color: #333;
@@ -62,8 +73,8 @@
     color: #333;
 }
 
-/* Estilo do modal de confirmação */
-.confirm-modal {
+/* Estilo do modal de confirmação e edição */
+.confirm-modal, .edit-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -117,4 +128,23 @@
 /* Remoção do efeito branco ao passar o mouse */
 .confirm-button:hover, .cancel-button:hover {
     opacity: 0.9;
+}
+
+/* Estilo dos inputs e do textarea no modal de edição */
+.modal-content input, .modal-content textarea {
+    width: 90%;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: white; /* Fundo branco */
+    color: #333; /* Cor do texto */
+    font-family: inherit; /* Mantém a mesma fonte */
+}
+
+/* Placeholder com "R$ 00,00" para o campo de preço */
+.modal-content input[type="number"]::placeholder {
+    color: #aaa;
+    font-style: italic;
 }

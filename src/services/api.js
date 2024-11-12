@@ -136,4 +136,15 @@ export const deleteService = async (id) => {
     }
 };
 
+// Função para atualizar um serviço
+export const updateService = async (serviceId, updatedData) => {
+    try {
+        const response = await api.put(`/servicos/${serviceId}`, updatedData);
+        return response.data;
+    } catch (error) {
+        console.error('Erro ao atualizar serviço:', error.response?.data || error.message);
+        throw error;
+    }
+};
+
 export default api;

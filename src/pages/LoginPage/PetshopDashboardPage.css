@@ -11,15 +11,20 @@
     position: fixed; /* Fixa a barra lateral à esquerda */
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar h2 {
     margin-top: 0;
+    margin-bottom: 20px; /* Espaçamento entre o título e a lista */
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0; /* Remove margens extras */
+    flex-grow: 1; /* Garante que a lista ocupe o espaço disponível */
 }
 
 .sidebar li {
@@ -31,6 +36,37 @@
     color: #ddd;
 }
 
+/* Estilo do botão de logout */
+.logout-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: auto; /* Empurra o botão de logout para o final da barra lateral */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.logout-icon {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px;
+    margin-right: 10px;
+    fill: white;
+}
+
+.logout-text {
+    color: white;
+    font-size: 1rem;
+}
+
+.logout-container:hover .logout-text {
+    color: #ddd; /* Muda a cor do texto ao passar o mouse */
+}
+
+.logout-container:hover .logout-icon {
+    fill: #ddd; /* Muda a cor do ícone ao passar o mouse */
+}
+
+/* Estilo da seção principal */
 .content {
     flex-grow: 1;
     padding: 20px;
@@ -38,9 +74,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
     text-align: center;
+    height: 100vh; /* Garante que ocupe a altura total */
 }
 
 .content h1 {

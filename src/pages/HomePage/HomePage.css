@@ -1,37 +1,186 @@
-@import '../../styles/variable.css'; /* Importando variáveis de cor */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* Estilização principal */
+.homepage {
+  width: 100vw;
+  /* Largura completa */
+  height: 100vh;
+  /* Altura completa */
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  /* Evita rolagem horizontal */
+}
 
-.home-page {
+/* Barra Horizontal Superior */
+.horizontal-bar {
+  width: 100%;
+  background-color: #6A0DAD;
+  /* Cor roxa */
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.horizontal-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+  position: relative;
+  flex-grow: 1;
+  /* Ocupar o máximo de espaço disponível */
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 80%;
+  /* Reduz o tamanho da barra de pesquisa */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  right: 10px;
+  /* Distância da borda direita */
+  width: 20px;
+  /* Tamanho do ícone */
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Botão de Login/Cadastro */
+.auth-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  /* Fonte menor */
+  color: white;
+  margin-left: 10px;
+  /* Margem entre o login e a barra de pesquisa */
+}
+
+.auth-button:hover {
+  color: #ddd;
+}
+
+.auth-button img {
+  width: 20px;
+  /* Tamanho do ícone */
+  height: 20px;
+  margin-right: 5px;
+  /* Espaço entre o ícone e o texto */
+}
+
+.auth-text {
+  display: flex;
+  flex-direction: column;
+  /* Exibe o texto em duas linhas */
+  align-items: flex-start;
+  /* Alinha o texto à esquerda */
+}
+
+.auth-text .top-text,
+.auth-text .bottom-text {
+  font-weight: bold;
+  /* Deixa os textos em negrito */
+  font-size: 0.80rem;
+  /* Fonte menor */
+}
+
+
+/* Conteúdo Principal */
+.home-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: var(--secondary-color); /* Usando variável de cor */
   text-align: center;
-  font-family: 'Roboto', sans-serif;
 }
 
-.home-page h1 {
-  color: var(--primary-color); /* Usando variável de cor */
+.welcome-message h1 {
+  font-size: 2.5rem;
+  color: #6A0DAD;
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Destaque de Serviços */
+.services-highlight {
+  margin-top: 20px;
+}
+
+.services-highlight h2 {
   margin-bottom: 20px;
+  font-size: 1.8rem;
 }
 
-.home-page p {
-  color: var(--text-color); /* Usando variável de cor */
-  font-size: 18px;
-}
-
-.home-page button {
-  background-color: var(--primary-color); /* Usando variável de cor */
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
+.service-card {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.home-page button:hover {
-  background-color: #5a00b3;
+.service-card:hover {
+  background-color: #f4f4f4;
+  border-color: #6A0DAD;
+}
+
+/* Botão Agende Agora */
+.cta-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #6A0DAD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #5a0ca3;
+}
+
+/* Rodapé */
+.home-footer {
+  background-color: #6A0DAD;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  /* Garante que o rodapé ocupe toda a largura */
+  position: absolute;
+  /* Fixa o rodapé na parte inferior */
+  bottom: 0;
+  /* Alinha ao fundo */
+  left: 0;
+  /* Remove qualquer espaço excedente à esquerda */
+}
+
+/* Ícones de Redes Sociais */
+.social-icons img {
+  margin: 0 5px;
+  width: 25px;
+  height: 25px;
 }

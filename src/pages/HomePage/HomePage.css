@@ -1,74 +1,55 @@
 /* Estilização principal */
 .homepage {
-  width: 100vw;
-  /* Largura completa */
-  height: 100vh;
-  /* Altura completa */
+  width: 100vw; /* Largura completa */
+  height: 100vh; /* Altura completa */
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  /* Evita rolagem horizontal */
+  overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
-/* Barra Horizontal Superior */
-.horizontal-bar {
+/* Barra Superior */
+.header-bar {
   width: 100%;
-  background-color: #6A0DAD;
-  /* Cor roxa */
+  background-color: #6A0DAD; /* Cor roxa */
   color: white;
   display: flex;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.horizontal-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-/* Barra de Pesquisa */
-.search-bar {
+  align-items: center; /* Alinha verticalmente os itens */
+  padding: 10px 10px;
   position: relative;
-  flex-grow: 1;
-  /* Ocupar o máximo de espaço disponível */
+  height: 40px; /* Define uma altura consistente para a barra */
+}
+
+/* Título Centralizado com Ícone */
+.page-title {
+  font-size: 1.9rem; /* Tamanho da fonte do título */
+  font-weight: bold;
+  color: white;
   display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 5px;
-  overflow: hidden;
-  max-width: 80%;
-  /* Reduz o tamanho da barra de pesquisa */
+  align-items: center; /* Alinha verticalmente o texto e o ícone */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  position: absolute; /* Permite centralizar na barra superior */
+  left: 50%; /* Move para o meio horizontalmente */
+  top: 50%; /* Move para o meio verticalmente */
+  transform: translate(-50%, -50%); /* Corrige o deslocamento para o centro exato */
+  margin: 0;
 }
 
-.search-bar input {
-  width: 100%;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: none;
-  outline: none;
+.page-title img.pets-icon {
+  width: 2rem; /* Tamanho do ícone */
+  height: 2rem;
+  margin-left: 8px; /* Espaço entre o texto e o ícone */
 }
 
-.search-bar .search-icon {
-  position: absolute;
-  right: 10px;
-  /* Distância da borda direita */
-  width: 20px;
-  /* Tamanho do ícone */
-  height: 20px;
-  cursor: pointer;
-}
 
 /* Botão de Login/Cadastro */
 .auth-button {
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 0.85rem;
-  /* Fonte menor */
+  font-size: 0.85rem; /* Fonte menor */
   color: white;
-  margin-left: 10px;
-  /* Margem entre o login e a barra de pesquisa */
+  gap: 5px; /* Espaço entre o ícone e o texto */
+  margin-right: 10px; /* Ajusta a posição para aproximar */
 }
 
 .auth-button:hover {
@@ -76,29 +57,21 @@
 }
 
 .auth-button img {
-  width: 20px;
-  /* Tamanho do ícone */
-  height: 20px;
-  margin-right: 5px;
-  /* Espaço entre o ícone e o texto */
+  width: 25px; /* Tamanho do ícone */
+  height: 25px;
 }
 
 .auth-text {
   display: flex;
-  flex-direction: column;
-  /* Exibe o texto em duas linhas */
-  align-items: flex-start;
-  /* Alinha o texto à esquerda */
+  flex-direction: column; /* Exibe o texto em duas linhas */
+  align-items: flex-start; /* Alinha o texto à esquerda */
 }
 
 .auth-text .top-text,
 .auth-text .bottom-text {
-  font-weight: bold;
-  /* Deixa os textos em negrito */
-  font-size: 0.80rem;
-  /* Fonte menor */
+  font-weight: bold; /* Deixa os textos em negrito */
+  font-size: 0.85rem; /* Tamanho reduzido da fonte */
 }
-
 
 /* Conteúdo Principal */
 .home-content {
@@ -168,14 +141,10 @@
   color: white;
   text-align: center;
   padding: 15px 0;
-  width: 100%;
-  /* Garante que o rodapé ocupe toda a largura */
-  position: absolute;
-  /* Fixa o rodapé na parte inferior */
-  bottom: 0;
-  /* Alinha ao fundo */
-  left: 0;
-  /* Remove qualquer espaço excedente à esquerda */
+  width: 100%; /* Garante que o rodapé ocupe toda a largura */
+  position: absolute; /* Fixa o rodapé na parte inferior */
+  bottom: 0; /* Alinha ao fundo */
+  left: 0; /* Remove qualquer espaço excedente à esquerda */
 }
 
 /* Ícones de Redes Sociais */

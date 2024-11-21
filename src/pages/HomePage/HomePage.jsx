@@ -1,30 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
-import SearchIcon from '../../Icons/Search.svg'; // Importação do ícone de busca
 import AccountIcon from '../../Icons/Account.svg'; // Importação do ícone de conta
+import PetsIcon from '../../Icons/Pets.svg'; // Importação do ícone de pet
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
     <div className="homepage">
-      {/* Barra Horizontal Superior */}
-      <header className="horizontal-bar">
-        <div className="horizontal-content">
-          {/* Barra de Pesquisa */}
-          <div className="search-bar">
-            <input type="text" placeholder="Procure por serviços..." />
-            <img src={SearchIcon} alt="Buscar" className="search-icon" />
-          </div>
+      {/* Barra Superior */}
+      <header className="header-bar">
+        {/* Título Centralizado com Ícone */}
+        <div className="title-container">
+          <h1 className="page-title">
+            PetShop <img src={PetsIcon} alt="Ícone de pet" className="pets-icon" />
+          </h1>
+        </div>
 
-          {/* Botão de Login/Cadastro */}
-          <div className="auth-button" onClick={() => navigate('/login')}>
-            <img src={AccountIcon} alt="Conta" className="account-icon" />
-            <div className="auth-text">
-              <span className="top-text">Entre</span>
-              <span className="bottom-text">ou Cadastre-se</span>
-            </div>
+        {/* Botão de Login/Cadastro */}
+        <div className="auth-button" onClick={() => navigate('/login')}>
+          <img src={AccountIcon} alt="Conta" className="account-icon" />
+          <div className="auth-text">
+            <span className="top-text">Entre</span>
+            <span className="bottom-text">ou Cadastre-se</span>
           </div>
         </div>
       </header>

@@ -1,0 +1,104 @@
+.calendar-container {
+    max-width: 1000px; /* Aumenta a largura máxima do contêiner */
+    margin: 20px auto;
+    padding: 40px; /* Adiciona espaçamento interno */
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    text-align: center;
+}
+
+/* Estilização geral do calendário */
+.react-calendar {
+    width: 100%; /* Garante que o calendário preencha o contêiner */
+    height: auto; /* Altura automática */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem; /* Ajusta o tamanho do texto */
+    border: none; /* Remove bordas extras */
+}
+
+/* Navegação do calendário */
+.react-calendar__navigation {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.react-calendar__navigation button {
+    background: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Aumenta o botão */
+    font-size: 1.2rem; /* Texto maior */
+    cursor: pointer;
+}
+
+.react-calendar__navigation button:hover {
+    background: #4a0072;
+}
+
+/* Dias da semana */
+.react-calendar__month-view__weekdays {
+    font-size: 1.5rem; /* Texto maior para os dias da semana */
+    font-weight: bold;
+    color: white;
+    background-color: #6a1b9a;
+    padding: 15px 0;
+}
+
+.react-calendar__month-view__days__day {
+    text-align: center;
+    padding: 20px; /* Aumenta os "quadrados" dos dias */
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #6a1b9a;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.react-calendar__month-view__days__day:hover {
+    background-color: #e0e0e0;
+}
+
+/* Dia atual */
+.react-calendar__tile--now {
+    background-color: #d1c4e9;
+    border: 2px solid #6a1b9a;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+/* Dia selecionado */
+.react-calendar__tile--active {
+    background-color: #6a1b9a;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #4a0072;
+}
+.modal {
+    position: fixed; /* Fixa a posição da modal na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta o posicionamento para o centro exato */
+    width: 100%; /* Garante que a largura ocupe a tela */
+    height: 100%; /* Garante que a altura ocupe a tela */
+    background: rgba(0, 0, 0, 0.5); /* Fundo com transparência */
+    display: flex; /* Flexbox para centralizar conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    z-index: 1000; /* Garante que a modal esteja acima de outros elementos */
+}
+
+.modal-content {
+    background: #fff; /* Fundo branco */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    max-width: 500px; /* Largura máxima */
+    width: 90%; /* Responsivo para telas menores */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+    text-align: left; /* Alinhamento do texto */
+}

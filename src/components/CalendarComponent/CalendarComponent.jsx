@@ -16,8 +16,12 @@ const CalendarComponent = () => {
     descricao: "",
     dataInicio: "",
     dataFim: "",
-    idServico: serviceId || location.state?.serviceId || "",
+    idServico: serviceId || "",
   });
+
+  // Extraindo a data da query string
+  const queryParams = new URLSearchParams(location.search);
+  const dateFromURL = queryParams.get("date");
 
   useEffect(() => {
     if (!formData.idServico) {
@@ -33,22 +37,33 @@ const CalendarComponent = () => {
           console.error("Erro ao buscar detalhes do serviço:", error);
         });
     }
-  }, [formData.idServico]);
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-    setIsModalOpen(true);
+    if (dateFromURL) {
+      const selectedDate = new Date(dateFromURL);
+      setSelectedDate(selectedDate);
+      fetchReservedTimes(selectedDate);
+    }
+  }, [formData.idServico, dateFromURL]);
 
-    // Buscar horários reservados para a data selecionada
+  const fetchReservedTimes = (date) => {
     api
-      .get(`/agendamentos?date=${date.toISOString().split("T")[0]}`)
+      .get(`/api/agendamentos?date=${date.toISOString().split("T")[0]}`)
       .then((response) => {
-        console.log(response.data);  // Verifique no console a resposta da API
         setReservedTimes(response.data);
       })
       .catch((error) => {
         console.error("Erro ao buscar horários reservados:", error);
       });
+  };
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setIsModalOpen(true);
+
+    // Atualizando a URL com a data selecionada
+    window.history.pushState(null, "", `/calendar/${serviceId}?date=${date.toISOString().split("T")[0]}`);
+
+    fetchReservedTimes(date);
   };
 
   const handleInputChange = (e) => {
@@ -76,11 +91,20 @@ const CalendarComponent = () => {
 
   const handleAgendamentoSubmit = async () => {
     try {
-      await api.post("/agendamentos", {
+      // Corrigido: Formatação das datas no formato ISO completo (incluindo hora)
+      const startDateTime = new Date(selectedDate);
+      startDateTime.setHours(...formData.dataInicio.split(":").map(Number));
+
+      const endDateTime = new Date(startDateTime);
+      endDateTime.setMinutes(startDateTime.getMinutes() + serviceDetails.timeInMinutes);
+
+      const eventData = {
         ...formData,
-        dataInicio: `${selectedDate.toISOString().split("T")[0]}T${formData.dataInicio}`,
-        dataFim: `${selectedDate.toISOString().split("T")[0]}T${formData.dataFim}`,
-      });
+        dataInicio: startDateTime.toISOString(), // Garante o formato completo ISO 8601
+        dataFim: endDateTime.toISOString(),     // Garante o formato completo ISO 8601
+      };
+
+      await api.post("/api/agendamentos", eventData);
       alert("Agendamento realizado com sucesso!");
       setIsModalOpen(false);
     } catch (error) {

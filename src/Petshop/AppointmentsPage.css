@@ -1,0 +1,69 @@
+/* Estilos para a página de agendamentos */
+.appointments-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.appointments-container h1 {
+    color: #6A0DAD; /* Roxo */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.appointments-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Estilo do cartão de agendamento */
+.appointment-card {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Ícone de lixeira dentro do cartão */
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    fill: #6A0DAD;
+}
+
+/* Títulos e conteúdo dos agendamentos */
+.appointment-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.appointment-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.appointment-card p strong {
+    color: #333;
+}

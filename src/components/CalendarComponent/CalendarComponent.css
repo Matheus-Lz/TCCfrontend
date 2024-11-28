@@ -79,6 +79,30 @@
     font-weight: bold;
     border: 2px solid #4a0072;
 }
+
+/* Adicionando estilo para datas reservadas */
+.react-calendar__month-view__days__day.reserved-date {
+    background-color: #ffcccc; /* Cor de fundo para datas reservadas */
+    color: #d32f2f; /* Cor do texto para destacar datas reservadas */
+    cursor: not-allowed; /* Cursor indicando que não é possível selecionar */
+}
+
+/* Estilo do dia reservado quando é o dia atual */
+.react-calendar__tile--now.reserved-date {
+    background-color: #f8bbd0; /* Cor para o dia reservado e atual */
+    border: 2px solid #d32f2f;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* Estilo para o dia selecionado que está reservado */
+.react-calendar__tile--active.reserved-date {
+    background-color: #d32f2f; /* Cor para o dia reservado selecionado */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #b71c1c;
+}
+
 .modal {
     position: fixed; /* Fixa a posição da modal na tela */
     top: 50%; /* Centraliza verticalmente */

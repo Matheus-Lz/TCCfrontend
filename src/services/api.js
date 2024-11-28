@@ -73,14 +73,14 @@ export const getEvents = async () => {
 // Requisição GET para buscar agendamentos por data
 export const getAgendamentosPorData = async (data) => {
     try {
-        const response = await api.get(`/agendamentos?date=${data}`);
+        const formattedDate = data.toISOString().split("T")[0]; // Formatação para 'YYYY-MM-DD'
+        const response = await api.get(`/agendamentos?date=${formattedDate}`);
         return response.data;
     } catch (error) {
         console.error('Erro ao buscar agendamentos por data:', error.response?.data || error.message);
         throw error;
     }
 };
-
 
 // Requisição POST para criar um novo agendamento
 export const createEvent = async (eventData) => {

@@ -10,6 +10,7 @@ import PetshopDashboardPage from './pages/LoginPage/PetshopDashboardPage';
 import RegisterServicePage from './Petshop/RegisterServicePage'; // Caminho atualizado
 import ServiceListPage from './Petshop/ServiceListPage'; // Caminho atualizado
 import UserServiceListPage from './pages/User/UserServiceListPage';
+import AppointmentsPage from './Petshop/AppointmentsPage'; // Correção do caminho
 import './styles/App.css';
 
 // Componente para Rota Protegida
@@ -93,6 +94,16 @@ function App() {
           element={
             <PrivateRoute>
               <UserServiceListPage />
+            </PrivateRoute>
+          }
+        />
+
+        {/* Rota para Gerenciar Agendamentos */}
+        <Route
+          path="/petshop/appointments"
+          element={
+            <PrivateRoute>
+              <AppointmentsPage />
             </PrivateRoute>
           }
         />
